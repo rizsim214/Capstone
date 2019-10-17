@@ -7,25 +7,25 @@
          <h1 class="text-center">Login Account</h1>
         <div class="modal-body" style="padding:40px 50px;">
 
-          <?php echo validation_errors('Error','<div class="danger"> , </div>');?>
-
-
+         
           <form role="form" method="POST" action="<?php echo site_url('jofcontroller/accounts');?>">
             
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" id="usrname" name="username" placeholder="Enter email">
+              <input type="text" class="form-control <?php echo form_error('userLogName') ? 'is-invalid' : '';?> " id="usrname" name="userLogName" value="<?php echo isset($userLogName) ? $userLogName : '' ?>" placeholder="Username">
+              <div class="invalid-feedback" ><?php echo form_error('userLogName') ? form_error('userLogName') : '';?></div>
             </div>
             <label form="usrname"><span class="glyphicon glyphicon-eye-open"></span> Password</label></br>            
-              <input type="password" class="form-control" placeholder="Enter password" name="password" id="example">
+              <input type="password" class="form-control <?php echo form_error('passLogWord') ? 'is-invalid' : '';?>" placeholder="password" name="passLogWord" id="example">
+              <div class="invalid-feedback" ><?php echo form_error('passLogWord') ? form_error('passLogWord') : '';?></div>
             <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
             </div>
               <div class="text-center" style="height: 50px;">
               <a href="<?php echo base_url('jofcontroller/view/home')?>" class="btn btn-danger" role="button">Back</a>
-              <button type="submit" class="btn btn-danger" name="submit" role="button">Login</button>
+              <button type="submit" class="btn btn-danger" name="signIn" role="button">Login</button>
               </div>
-
+ 
           </form>
         </div>
        

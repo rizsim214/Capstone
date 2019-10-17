@@ -7,17 +7,23 @@ class Jof_Model extends CI_Model{
 		parent:: __construct();
 	}
 
-	public function verifyUser($arr){
+	public function verifyUser($data){
 
 		
 		$this->db->select('*');
 		$this->db->from('jof_users');
-		$this->db->where('userName', $arr['username']);
-		$this->db->where('pass_Word', $arr['password']);
+		$this->db->where('userName', $data['userLogName']);
+		$this->db->where('pass_Word', $data['passLogWord']);
 
 		$query = $this->db->get();
 			
-		return $query;
+		return $return = $query->row_array();
+		// echo '<pre>';
+		// echo $this->db->last_query();
+		// print_r($return);
+
+		// echo  '</pre>';
+		// die('jere');
 	}
 
 	public function addUser($data){
