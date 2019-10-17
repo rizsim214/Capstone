@@ -1,0 +1,38 @@
+
+body{
+	font-family: Impact, Charcoal, sans-serif;
+}
+.h1{
+	font-size: 45px;
+	letter-spacing: 5px;
+
+}	
+.nav{
+	position: absolute;
+	margin-left: 20%;
+	padding-bottom: 50px;
+	font-size: 25px;	
+
+}
+.nav-link{
+	color: #F8F8FF;
+	font-variant: small-caps;
+}
+.nav-link:hover{
+	border: 1px solid #F8F8FF;
+	border-radius: 5px;
+	color: black;
+}
+.nav-item{
+	padding-left: 20px;
+	margin-left: 30px;
+	letter-spacing: 3px;
+}
+
+#log-reg{
+	margin-left: 79%;
+	color: #F8F8FF;
+}
+#reg{
+	color: #F8F8FF;
+}
