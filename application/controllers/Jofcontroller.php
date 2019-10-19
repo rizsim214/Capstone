@@ -21,105 +21,129 @@ class Jofcontroller extends CI_Controller{
 			$this->load->view('pages/'.$page, $data);
 			$this->load->view('includes/footer');
 
-	}
+		}
 
 	public function accounts(){
 
-		if(isset($_POST['signIn'])) {
-
-			$this->form_validation->set_rules('userLogName' , 'Username' , 'required' , array('required' => 'Username must be provided'));
-			$this->form_validation->set_rules('passLogWord' , 'Password' , 'required' , array('required' => 'Password must be provided'));
-
-			if ($this->form_validation->run() == TRUE) {
-
-					$data['userLogName'] = $this->input->post('userLogName');
-					$data['passLogWord'] = md5($this->input->post('passLogWord'));
 
 
-					$result = $this->jof_model->verifyUser($data);
+				if(isset($_POST['signIn'])) {
 
-			 // print_r($result);
-				// var_dump($data);
-						if ($result != NULL) {
+					$this->form_validation->set_rules('userLogName' , 'Username' , 'required' , array('required' => 'Username must be provided'));
+					$this->form_validation->set_rules('passLogWord' , 'Password' , 'required' , array('required' => 'Password must be provided'));
 
-							$user_data = $result;
-							$name = $user_data['username'];
-							$email = $user_data['email_add'];
-							$user_type = $user_data['user_type'];
-								
+					if ($this->form_validation->run() == TRUE) {
+
+							$data['userLogName'] = $this->input->post('userLogName');
+							$data['passLogWord'] = md5(md5($this->input->post('passLogWord')));
 
 
-							$ses_data = array(
-								'username' => $name,
-								'email_add' => $email,
-								'user_type' => $user_type,
-								'logged_in' => TRUE
+							$result = $this->jof_model->verifyUser($data);
+							
 
-								);		
-							var_dump($ses_data);
-								
-							$this->session->set_userdata($ses_data);
+																		// DEBUGGING SYNTAXES
+																		//  echo $this->db->last_query();
+																		// die();
+																 // print_r($result);
+																	// var_dump($data);
+								if ($result != NULL) {
 
-								if ($user_type === '1') {
-									redirect('jof/admin');
-
-								}elseif ($user_type === '2') {
-									redirect('jof/accounting');
-
-								}elseif ($user_type === '3') {
-									redirect('jof/broker');
-
-								}elseif($user_type === '4'){
-
-									redirect('jof/consignee');
-
-								}
-
-					}else{
+									$user_data = $result;
+									$name = $user_data['username'];
+									$email = $user_data['email_add'];
+									$user_type = $user_data['user_type'];
+										
 
 
-								$temp_data['userLogName'] = $this->input->post('userLogName');
+									$ses_data = array(
+										'username' => $name,
+										'email_add' => $email,
+										'user_type' => $user_type,
+										'logged_in' => TRUE
 
+										);		
+									
+										
+									$this->session->set_userdata($ses_data);
 
-								$this->load->view('includes/header');
-								$this->load->view('pages/login');
-								$this->load->view('includes/footer');
+										if ($user_type === '1') {
+											redirect('jof/admin');
+
+										}elseif ($user_type === '2') {
+											redirect('jof/accounting');
+
+										}elseif ($user_type === '3') {
+											redirect('jof/broker');
+
+										}elseif($user_type === '4'){
+
+											redirect('jof/consignee');
+
+										}
+
+								}	else{
+										
+
+										$this->session->set_flashdata('Error' , 'Account not found! Please provide a valid account');
+										redirect('jofcontroller/view/login');
 
 									}
-			}
-			
 
-				
-	}
-}
+
+								}	else {
+
+
+										$temp_data['userLogName'] = $this->input->post('userLogName');
+
+
+										$this->load->view('includes/header');
+										$this->load->view('pages/login');
+										$this->load->view('includes/footer');
+
+										}
+					
+
+										
+						}
+				}
 	
 
 	public function register(){
 
 		if (isset($_POST['submit'])) {
 				
-			$this->form_validation->set_rules('companyName', 'Company Name' , 'required', array('required' => 'Company Name must be provided'));
-			$this->form_validation->set_rules('companyAdd', 'Company Address' , 'required' , array('required' => 'Company Address must be provided'));
-			$this->form_validation->set_rules('firstName', 'First Name' , 'required' , array('required' => 'First Name must be provided'));
-			$this->form_validation->set_rules('lastName', 'Last Name' , 'required'  , array('required' => 'Last Name must be provided'));
-			$this->form_validation->set_rules('midInit', 'Middle Name' , 'required'  , array('required' => 'Middle Name must be provided'));
-			$this->form_validation->set_rules('username', 'Username' , 'required|min_length[8]|max_length[30]|trim'  , array('required' => 'Username must be provided', 'min_length' => 'Username must be more than 8 characters', 'max_length' => 'Username must be less than 30 characters'));
-			$this->form_validation->set_rules('email', 'Email' , 'required|valid_email' , array('required' => 'Email must be provided', 'valid_email'=> 'Must be a valid email'));
-			$this->form_validation->set_rules('homeAdd', 'Address' , 'required' , array('required' => 'Home Address must be provided') );
-			$this->form_validation->set_rules('contactInfo', 'Contact Information' , 'required' , array('required' => 'Contact Information must be provided'));
-			$this->form_validation->set_rules('passWord', 'password' , 'required|min_length[8]|md5'  , array('required' => 'Password must be provided', 'min_length' => 'Password must be more than 8 characters'));
-			$this->form_validation->set_rules('passRepeat', 'Repeat Password' , 'required|matches[passWord]|md5' , array('required' => 'Password must be provided' , 'matches' => 'Must be the same with password'));
-			$this->form_validation->set_rules('cityAdd', 'City Address' , 'required' , array('required' => 'City Address must be provided'));
-			$this->form_validation->set_rules('cityState', 'State' , 'required', array('required' => 'State must be provided'));
-			$this->form_validation->set_rules('zipCode', 'Zip Code' , 'required', array('required' => 'Zip code must be provided'));
+				$this->form_validation->set_rules('companyName', 'Company Name' , 'required', array('required' => 'Company Name must be provided'));
+				
+				$this->form_validation->set_rules('companyAdd', 'Company Address' , 'required' , array('required' => 'Company Address must be provided'));
+				
+				$this->form_validation->set_rules('firstName', 'First Name' , 'required' , array('required' => 'First Name must be provided'));
+				
+				$this->form_validation->set_rules('lastName', 'Last Name' , 'required'  , array('required' => 'Last Name must be provided'));
+				
+				$this->form_validation->set_rules('midInit', 'Middle Name' , 'required'  , array('required' => 'Middle Name must be provided'));
+				
+				$this->form_validation->set_rules('username', 'Username' , 'required|min_length[8]|max_length[30]|trim|is_unique[jof_users.userName]'  , array('required' => 'Username must be provided', 'min_length' => 'Username must be more than 8 characters', 'max_length' => 'Username must be less than 30 characters' , 'is_unique' => 'Must be a unique username'));
+				
+				$this->form_validation->set_rules('email', 'Email' , 'required|valid_email|is_unique[jof_users.email_add]' , array('required' => 'Email must be provided', 'valid_email'=> 'Must be a valid email' , 'is_unique' => 'Must be a unique Email Address'));
+				
+				$this->form_validation->set_rules('homeAdd', 'Address' , 'required' , array('required' => 'Home Address must be provided') );
+				
+				$this->form_validation->set_rules('contactInfo', 'Contact Information' , 'required' , array('required' => 'Contact Information must be provided'));
+				
+				$this->form_validation->set_rules('passWord', 'password' , 'required|min_length[8]'  , array('required' => 'Password must be provided', 'min_length' => 'Password must be more than 8 characters'));
+				
+				$this->form_validation->set_rules('passRepeat', 'Repeat Password' , 'required|matches[passWord]' , array('required' => 'Password must be provided' , 'matches' => 'Must be the same with password'));
+				
+				$this->form_validation->set_rules('cityAdd', 'City Address' , 'required' , array('required' => 'City Address must be provided'));
+				
+				$this->form_validation->set_rules('cityState', 'State' , 'required', array('required' => 'State must be provided'));
+				
+				$this->form_validation->set_rules('zipCode', 'Zip Code' , 'required', array('required' => 'Zip code must be provided'));
 
-			// die('dasdsadsa');
-
-			// $this->form_validation->set_error_delimiters('<div class="error"> , </div>');
-			// $this->form_validation->set_message('required','Enter %s');
+				
 
 
-			if ($this->form_validation->run() == TRUE) {
+				if ($this->form_validation->run() == TRUE) {
 				
 					$data = array(
 						'user_type' => 4, 
@@ -132,7 +156,7 @@ class Jofcontroller extends CI_Controller{
 						'email_add' => $this->input->post('email'),
 						'home_Add' => $this->input->post('homeAdd'),
 						'contact_info' => $this->input->post('contactInfo'),
-						'pass_Word' => md5($this->input->post('passWord')),
+						'pass_Word' => md5(md5($this->input->post('passWord'))),
 						'user_City' => $this->input->post('cityAdd'),
 						'user_State' => $this->input->post('cityState'),
 						'user_Zip' => $this->input->post('zipCode')
@@ -152,10 +176,11 @@ class Jofcontroller extends CI_Controller{
 
 
 						}
-						$this->session->set_userdata($user_data);
-						redirect('jofcontroller/view/signup');
 
-			}else{
+						$this->session->set_userdata($user_data);
+						redirect('jofcontroller/view/login');
+
+					}else{
 				
 			
 						
@@ -173,17 +198,21 @@ class Jofcontroller extends CI_Controller{
 						$temp['cityState'] = $this->input->post('cityState');
 						$temp['zipCode'] = $this->input->post('zipCode');
 
-						// print_r($temp);
-				 	// 	die();
-				$this->load->view('includes/header');
-				$this->load->view('pages/signup', $temp);
-				$this->load->view('includes/footer');
-			// redirect('jofcontroller/view/signup');
+				
+						$this->load->view('includes/header');
+						$this->load->view('pages/signup', $temp);
+						$this->load->view('includes/footer');
 
+				
+
+					}
+		
 			}
-		}
-
 	}
 
+	public function logout(){
 
+		$this->session->unset_userdata($ses_data);
+		redirect('jofcontroller/view/login');
+	}
 }

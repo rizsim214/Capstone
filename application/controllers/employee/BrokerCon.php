@@ -14,7 +14,15 @@ class BrokerCon extends CI_Controller{
 
 	 public function index(){
 		
-		$this->brokerData();
+		// if userdata not set redirect to login
+		if ($this->session->userdata('logged_in') !== TRUE) {
+			redirect('jofcontroller/view/login');
+
+			 } else {
+
+				$this->brokerData();
+			}
+		
 
 	}
 

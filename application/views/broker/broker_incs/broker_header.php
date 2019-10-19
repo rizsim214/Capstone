@@ -49,7 +49,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Profile Management</a>
           <a class="dropdown-item" href="#">Unsettled Dues</a>
-          <a class="dropdown-item" href="#">Logout</a>
+          <a class="dropdown-item" href="<?php echo site_url('jofcontroller/logout');  ?>">Logout</a>
         </div>
       </li>
     </ul>

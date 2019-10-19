@@ -1,15 +1,33 @@
 
+
+
 <div class="container">
 	
-    <div class="modal-content">
+    <div class="modal-content ">
         <div class= "modal-header" style="padding:35px 50px;">      
         </div>
-         <h1 class="text-center">Login Account</h1>
-        <div class="modal-body" style="padding:40px 50px;">
 
-         
-          <form role="form" method="POST" action="<?php echo site_url('jofcontroller/accounts');?>">
+
+         <h1 class="text-center">Login Account</h1>
+           
+<!-- 
+               
+                   <?php if ($this->session->flashdata('Error')) {?>
+                <div class="alert alert-danger col-md-11" role="alert">
+                  <<?php echo $this->session->flashdata('Error'); ?>
+              </div>
+              <?php  } ?> -->
+
+             <?php if($this->session->flashdata('Error')){ ?>
+                  <div class="alert alert-danger mx-auto col-md-8 text-center">
+                  <?php echo $this->session->flashdata('Error') ? $this->session->flashdata('Error') : '' ;?>
+                  </div>
+              <?php  }  ?>
+               
             
+        <div class="modal-body col-md-11" style="padding:30px 50px;">
+          <form role="form" method="POST" action="<?php echo site_url('jofcontroller/accounts');?>">
+                
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
               <input type="text" class="form-control <?php echo form_error('userLogName') ? 'is-invalid' : '';?> " id="usrname" name="userLogName" value="<?php echo isset($userLogName) ? $userLogName : '' ?>" placeholder="Username">
@@ -27,31 +45,11 @@
               </div>
  
           </form>
-        </div>
+  
        
           <p style= "padding: 1px 50px">Not a member yet? <a href="<?php echo base_url('jofcontroller/view/signup')?>">Sign Up</a></p>
 
-          
-        </div>
-      </div>
-      
-    </div>
-  </div> 
-</div>
-
-
-<script>
-$(document).ready(function(){
-  $("#myBtn").click(function(){
-    $("#myModal").modal();
-  });
-});
-</script>
-
- <script src="/path/to/password-score.js"></script>
-<script src="/path/to/password-score-options.js"></script>
-<script src="/path/to/bootstrap-strength-meter.js"></script>
-
+</div>   
 </div>
 </div>
 <br>

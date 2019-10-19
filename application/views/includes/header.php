@@ -18,7 +18,7 @@
   <body>
   <div class="jumbotron bg-light">
     <h1 class="display-5 " >JOF CUSTOMS BROKERAGE</h1>
-    <p class="lead ">We provide the very best quality our company has to offer.</p>
+    <p class="lead ">We provide the very best quality service our company has to offer.</p>
     <hr class="my-4">
   </div>
 
