@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -7,20 +8,22 @@ class ConsCon extends CI_Controller{
 
 		parent:: __construct();
 
+			
+			// if userdata not set redirect to login
+		if ($this->session->userdata($ses_data) != TRUE ) {
+
+			$this->session->set_flashdata('Error', 'Please Login your Account');
+			redirect('jofcontroller/view/login');
+		}
 		
 		
 	}
 
 	 public function index(){
 		
-		// if userdata not set redirect to login
-		if ($this->session->userdata('logged_in') !== TRUE) {
-			redirect('jofcontroller/view/login');
-			 } else {
-
-				$this->consData();
-			}
-
+		
+		
+	 	$this->consData();
 		
 
 	}

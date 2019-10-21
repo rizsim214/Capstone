@@ -5,7 +5,7 @@ body{
 
 .navbar-brand{
 
-	font-size: 5px;
+	font-size: 20px;
 	letter-spacing: 5px;
 }
 
@@ -13,15 +13,15 @@ body{
 .dropdown {list-style: none; background: #dc3545;  display: inline-block; }
 .dropdown .nav-link {color:#F8F8FF; text-decoration: none;}
 .dropdown .dropdown-menu a{color: #F8F8FF; text-decoration: none;}
-.dropdown .dropdown-item {background: #dc3545; color:#F8F8FF;}
+.dropdown .dropdown-item {background: #dc3545; color:#dc3545;}
 .dropdown .dropdown-item:hover {background: #F8F8FF; color:#dc3545;}
 .dropdown .dropdown-menu:active {background:#dc3545; color:#F8F8FF;}
 .dropdown .dropdown-menu:focus {background: #F8F8FF; color:#dc3545;}
 .dropdown-menu .dropdown-item {display: inline-block; width: 100%; padding: 10px 15px 10px;}
 .container .dropdown .dropdown-menu a:hover
 {
-  color: #000;
-  background-color: #000;
-  border-color: #000;
+  color: #dc3545;
+  background-color: #dc3545;
+  border-color: #dc3545;
 }
 

@@ -42,49 +42,68 @@ class Jofcontroller extends CI_Controller{
 							
 
 																		// DEBUGGING SYNTAXES
-																		//  echo $this->db->last_query();
+																		  // echo $this->db->last_query();
 																		// die();
 																 // print_r($result);
 																	// var_dump($data);
 								if ($result != NULL) {
 
 									$user_data = $result;
-									$name = $user_data['username'];
+									$name = $user_data['userName'];
 									$email = $user_data['email_add'];
 									$user_type = $user_data['user_type'];
-										
+									$user_logged_in = TRUE;	
 
 
 									$ses_data = array(
 										'username' => $name,
 										'email_add' => $email,
 										'user_type' => $user_type,
-										'logged_in' => TRUE
+										
 
-										);		
+										);	
+
+									
 									
 										
 									$this->session->set_userdata($ses_data);
 
 										if ($user_type === '1') {
-											redirect('jof/admin');
+											if ($this->session->userdata()) {
 
+												//$data 
+												redirect('jof/admin');
+
+												 //var_dump($data['user_type']);
+											}
+									
 										}elseif ($user_type === '2') {
-											redirect('jof/accounting');
+											if ($this->session->userdata()) {
+												redirect('jof/accounting');
+											}
+											
 
 										}elseif ($user_type === '3') {
-											redirect('jof/broker');
+
+											if ($this->session->userdata()) {
+												redirect('jof/broker');
+											}
+											
 
 										}elseif($user_type === '4'){
 
-											redirect('jof/consignee');
+											if ($this->session->userdata()) {
+												
+												redirect('jof/consignee'); 
+
+											}	
 
 										}
 
 								}	else{
 										
 
-										$this->session->set_flashdata('Error' , 'Account not found! Please provide a valid account');
+										$this->session->set_flashdata('Error' , 'No Account Found! Please provide a valid account');
 										redirect('jofcontroller/view/login');
 
 									}
@@ -163,11 +182,12 @@ class Jofcontroller extends CI_Controller{
 
 						);
 							
-					$check = $this->jof_model->addUser($data);
+					$Check_result = $this->jof_model->addUser($data);
 
-						if ($check !== false) {
+						if ($Check_result !== false) {
+
 							$user_data = array(
-								'user_id' => $check,
+								'user_id' => $Check_result,
 								'username' => $this->input->post('username'),
 								'email' => $this->input->post('email'),
 								'firstName' => $this->input->post('firstName'),
@@ -178,6 +198,7 @@ class Jofcontroller extends CI_Controller{
 						}
 
 						$this->session->set_userdata($user_data);
+						
 						redirect('jofcontroller/view/login');
 
 					}else{
@@ -213,6 +234,9 @@ class Jofcontroller extends CI_Controller{
 	public function logout(){
 
 		$this->session->unset_userdata($ses_data);
+
+		$this->session->set_flashdata('Success', 'Account successfully logged out!!');
+
 		redirect('jofcontroller/view/login');
 	}
 }

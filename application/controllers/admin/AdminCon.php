@@ -6,8 +6,13 @@ class AdminCon extends CI_Controller{
 	function __construct(){
 
 		parent:: __construct();
-		
-		if ($this->session->userdata('logged_in') !== TRUE) {
+			// requires user data
+
+
+		if ($this->session->userdata() == NULL) {
+
+			$this->session->set_flashdata('Error' , 'Please Log in to your account!!');
+			
 			redirect('jofcontroller/view/login');
 		}
 	}

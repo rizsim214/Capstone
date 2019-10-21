@@ -22,8 +22,12 @@
                   <div class="alert alert-danger mx-auto col-md-8 text-center">
                   <?php echo $this->session->flashdata('Error') ? $this->session->flashdata('Error') : '' ;?>
                   </div>
-              <?php  }  ?>
+              <?php  }else if($this->session->flashdata('Success')){ ?>
+                   <div class="alert alert-success mx-auto col-md-8 text-center">
+                  <?php echo $this->session->flashdata('Success') ? $this->session->flashdata('Success') : '' ;?>
+                  </div>
                
+               <?php } ?>
             
         <div class="modal-body col-md-11" style="padding:30px 50px;">
           <form role="form" method="POST" action="<?php echo site_url('jofcontroller/accounts');?>">
