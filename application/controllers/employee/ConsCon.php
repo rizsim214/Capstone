@@ -9,14 +9,16 @@ class ConsCon extends CI_Controller{
 		parent:: __construct();
 
 			
-			// if userdata not set redirect to login
-		if ($this->session->userdata($ses_data) != TRUE ) {
+		$user_logged = $this->session->userdata();
 
-			$this->session->set_flashdata('Error', 'Please Login your Account');
+
+		if ($user_logged['logged_in'] == FALSE) {
+
+			$this->session->set_flashdata('Error' , 'Please Log in to your account!!');
+			
 			redirect('jofcontroller/view/login');
+		
 		}
-		
-		
 	}
 
 	 public function index(){

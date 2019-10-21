@@ -30,23 +30,13 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Feedbacks & Ratings</a>
+        <a class="nav-link" href="#">Ratings</a>
       </li>
 
-      <div class="collapse navbar-collapse text-right col-sm-2" id="navbarColor01">
-       <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarColor01" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Services
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarColor01">
-          <a class="dropdown-item" href="#">Roles</a>
-          <a class="dropdown-item" href="#">Add Employee Account</a>
-          <a class="dropdown-item" href="#">View Unsettled Dues</a>
-        </div>
+       <li class="nav-item">
+        <a class="nav-link" href="#">Feedbacks</a>
       </li>
-    </ul>
-  </div>
+      
       </ul>
     
      <div class="collapse navbar-collapse text-right col-sm-2" id="navbarColor01">
@@ -54,11 +44,15 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarColor01" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <span class="glyphicon glyphicon-user"></span> Accounts
+         <span class="glyphicon glyphicon-user"></span> Admin
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarColor01">
           <a class="dropdown-item" href="#">Manage Account</a>
+          <a class="dropdown-item" href="#">Employees</a>
+          <a class="dropdown-item" href="#">Change Roles</a>
+          <a class="dropdown-item" href="#">All Unsettled Dues</a>
           <a class="dropdown-item" href="#">Transaction History</a>
+          <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="<?php echo site_url('jofcontroller/logout');  ?>">Logout</a>
         </div>
       </li>

@@ -7,22 +7,22 @@ class BrokerCon extends CI_Controller{
 
 		parent:: __construct();
 
-		if ($this->session->userdata('logged_in') !== TRUE) {
+		$user_logged = $this->session->userdata();
+
+
+		if ($user_logged['logged_in'] == FALSE) {
+
+			$this->session->set_flashdata('Error' , 'Please Log in to your account!!');
+			
 			redirect('jofcontroller/view/login');
+
 		}
 	}
 
 	 public function index(){
 		
-		// if userdata not set redirect to login
-		if ($this->session->userdata('logged_in') !== TRUE) {
-			redirect('jofcontroller/view/login');
-
-			 } else {
-
-				$this->brokerData();
-			}
 		
+		$this->brokerData();
 
 	}
 

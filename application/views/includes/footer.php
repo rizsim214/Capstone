@@ -4,7 +4,7 @@
  	<nav class="navbar-dark bg-danger sticky-bottom">
  		<section class="container-fluid">
  		<h4 class="nav-item" ><span class="glyphicon glyphicon-map-marker" style="margin-right:5px;"></span>We are located here</h3>
- 		<iframe width="100%" height="550" frameborder="1px;" style="border:1px solid black" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJJa620ZSYqTMRncUWk-m52cI&key=AIzaSyBDNLt0rFQ2WC-3VII-pjzK3iVA1Tyc6N4" allowfullscreen></iframe>
+ 		<iframe width="100%" height="350" frameborder="1px;" style="border:1px solid black" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJJa620ZSYqTMRncUWk-m52cI&key=AIzaSyBDNLt0rFQ2WC-3VII-pjzK3iVA1Tyc6N4" allowfullscreen></iframe>
 	</section> 
  		<div class="container-fluid row">
  			<div class="col-md-4 text-left" style="color:#F8F8FF;">

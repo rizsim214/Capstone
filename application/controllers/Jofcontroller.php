@@ -15,6 +15,8 @@ class Jofcontroller extends CI_Controller{
 		if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
 			show_404();
 		}
+
+
 			$data['title'] = ucfirst($page);
 
 			$this->load->view('includes/header');
@@ -59,7 +61,7 @@ class Jofcontroller extends CI_Controller{
 										'username' => $name,
 										'email_add' => $email,
 										'user_type' => $user_type,
-										
+										'logged_in' => $user_logged_in
 
 										);	
 
@@ -164,76 +166,77 @@ class Jofcontroller extends CI_Controller{
 
 				if ($this->form_validation->run() == TRUE) {
 				
-					$data = array(
-						'user_type' => 4, 
-						'company_name' => $this->input->post('companyName'),
-						'company_add' => $this->input->post('companyAdd'),
-						'firstName' => $this->input->post('firstName'),
-						'lastName' => $this->input->post('lastName'),
-						'mid_init' => $this->input->post('midInit'),
-						'userName' => $this->input->post('username'),
-						'email_add' => $this->input->post('email'),
-						'home_Add' => $this->input->post('homeAdd'),
-						'contact_info' => $this->input->post('contactInfo'),
-						'pass_Word' => md5(md5($this->input->post('passWord'))),
-						'user_City' => $this->input->post('cityAdd'),
-						'user_State' => $this->input->post('cityState'),
-						'user_Zip' => $this->input->post('zipCode')
-
-						);
-							
-					$Check_result = $this->jof_model->addUser($data);
-
-						if ($Check_result !== false) {
-
-							$user_data = array(
-								'user_id' => $Check_result,
-								'username' => $this->input->post('username'),
-								'email' => $this->input->post('email'),
+							$data = array(
+								'user_type' => 4, 
+								'company_name' => $this->input->post('companyName'),
+								'company_add' => $this->input->post('companyAdd'),
 								'firstName' => $this->input->post('firstName'),
-								'lastName' => $this->input->post('lastName')
+								'lastName' => $this->input->post('lastName'),
+								'mid_init' => $this->input->post('midInit'),
+								'userName' => $this->input->post('username'),
+								'email_add' => $this->input->post('email'),
+								'home_Add' => $this->input->post('homeAdd'),
+								'contact_info' => $this->input->post('contactInfo'),
+								'pass_Word' => md5(md5($this->input->post('passWord'))),
+								'user_City' => $this->input->post('cityAdd'),
+								'user_State' => $this->input->post('cityState'),
+								'user_Zip' => $this->input->post('zipCode')
+
 								);
+									
+							$Check_result = $this->jof_model->addUser($data);
+
+								if ($Check_result !== false) {
+
+									$user_data = array(
+										'user_id' => $Check_result,
+										'username' => $this->input->post('username'),
+										'email' => $this->input->post('email'),
+										'firstName' => $this->input->post('firstName'),
+										'lastName' => $this->input->post('lastName')
+										);
 
 
-						}
+								}
 
-						$this->session->set_userdata($user_data);
+								// $this->session->set_userdata($user_data);
+								
+								redirect('jofcontroller/view/login');
+
+							}else{
 						
-						redirect('jofcontroller/view/login');
+					
+								
+								$temp['companyName'] = $this->input->post('companyName');
+								$temp['companyAdd'] = $this->input->post('companyAdd');
+								$temp['firstName'] = $this->input->post('firstName');
+								$temp['lastName'] = $this->input->post('lastName');
+								$temp['midInit'] = $this->input->post('midInit');
+								$temp['username'] = $this->input->post('username');
+								$temp['email'] = $this->input->post('email');
+								$temp['homeAdd'] = $this->input->post('homeAdd');
+								$temp['contactInfo'] = $this->input->post('contactInfo');
+								$temp['passWord'] = md5($this->input->post('passWord'));
+								$temp['cityAdd'] = $this->input->post('cityAdd');
+								$temp['cityState'] = $this->input->post('cityState');
+								$temp['zipCode'] = $this->input->post('zipCode');
 
-					}else{
-				
-			
 						
-						$temp['companyName'] = $this->input->post('companyName');
-						$temp['companyAdd'] = $this->input->post('companyAdd');
-						$temp['firstName'] = $this->input->post('firstName');
-						$temp['lastName'] = $this->input->post('lastName');
-						$temp['midInit'] = $this->input->post('midInit');
-						$temp['username'] = $this->input->post('username');
-						$temp['email'] = $this->input->post('email');
-						$temp['homeAdd'] = $this->input->post('homeAdd');
-						$temp['contactInfo'] = $this->input->post('contactInfo');
-						$temp['passWord'] = md5($this->input->post('passWord'));
-						$temp['cityAdd'] = $this->input->post('cityAdd');
-						$temp['cityState'] = $this->input->post('cityState');
-						$temp['zipCode'] = $this->input->post('zipCode');
+								$this->load->view('includes/header');
+								$this->load->view('pages/signup', $temp);
+								$this->load->view('includes/footer');
 
-				
-						$this->load->view('includes/header');
-						$this->load->view('pages/signup', $temp);
-						$this->load->view('includes/footer');
+						
 
-				
-
-					}
+							}
 		
 			}
 	}
 
 	public function logout(){
 
-		$this->session->unset_userdata($ses_data);
+
+		$this->session->sess_destroy();
 
 		$this->session->set_flashdata('Success', 'Account successfully logged out!!');
 
