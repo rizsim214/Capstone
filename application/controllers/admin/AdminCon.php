@@ -19,6 +19,8 @@ class AdminCon extends CI_Controller{
 		}
 
 		$this->load->model('admin/jof_model');
+
+		
 	}
 
 	 public function index(){
@@ -30,17 +32,19 @@ class AdminCon extends CI_Controller{
 
 	}
 
-	public function adminData(){
-			$allData['transResult'] = $this->jof_model->getAllTransact();
-			$allData['userResult'] = $this->jof_model->getAllUsers();
+	public function adminData($admin_page = 'admin_dash'){
+		if(!file_exists(APPPATH.'views/admin/'.$admin_page.'.php')){
+			show_404();
+		}
 
-			$this->load->view('admin/admin_incs/admin_header');
-			$this->load->view('admin/admin_dash',$allData);
-			$this->load->view('admin/admin_incs/admin_footer');
-		
+		$user_logged = $this->session->userdata();
+
+		$name['username'] = $user_logged['username'];
+
+		$this->load->view('admin/admin_incs/admin_header',$name);
+		$this->load->view('admin/'.$admin_page. '.php');
+		$this->load->view('admin/admin_incs/admin_footer');
 	}
-
-
 
 	
 }

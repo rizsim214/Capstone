@@ -87,19 +87,19 @@
 
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark relative" style="background: #212529;">
-        
+            
             <div class="col-md-11 text-right">
             <li class="nav-item dropdown">
                   <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-user" style="margin-right:5px;"></span>
-                   Admin
+                   Welcome <?php echo $username;  ?>
                   </a>
                   <div class="dropdown-menu col-md-5" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Manage Account</a>
-                    <a class="dropdown-item" href="#">Manange FAQs</a>
+                    <a class="dropdown-item" href="<?php echo site_url('admin/admincon/adminData/add_account');?>">Manage Account</a>
                     <a class="dropdown-item" href="<?php echo site_url('jofcontroller/logout');?>">Logout</a>
                   </div>
                 </li>
       </div>
+
 
   </nav>
 <div class="sidenav">
@@ -112,21 +112,20 @@
                 Transactions
               </a>
               <div class="dropdown-menu col-md-5 text-center" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Transactions</a>
-                <a class="dropdown-item" href="#">Transaction History</a>
-                <a class="dropdown-item" href="#">Transaction Reports</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/admincon/adminData/transactions');?>">Transactions</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/admincon/adminData/transact_history');?>">Transaction History</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/admincon/adminData/transact_reports');?>">Transaction Reports</a>
               </div>
             </li>
 
             <div class="dropdown-divider" id="divider"></div>
         <li class="nav-item dropdown">
               <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Ratings & Feedbacks
+                Reports
               </a>
               <div class="dropdown-menu col-md-5 text-center" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#"> Ratings</a>
-                <a class="dropdown-item" href="#"> Feedbacks</a>
-                <a class="dropdown-item" href="#"> Reports</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/admincon/adminData/feedback_rating');?>"> Ratings & Feedbacks </a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/admincon/adminData/reports');?>"> Report</a>
               </div>
             </li>
 
@@ -136,9 +135,9 @@
                 Accounting 
               </a>
               <div class="dropdown-menu col-md-5 text-center" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Set Payments</a>
-                <a class="dropdown-item" href="#">Unsettled Dues</a>
-                <a class="dropdown-item" href="#">TBD</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/admincon/adminData/set_payment');?>">Set Payments</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/admincon/adminData/unsettled_dues');?>">Unsettled Dues</a>
+               
               </div>
             </li>
 
@@ -148,9 +147,9 @@
                 Employees 
               </a>
               <div class="dropdown-menu col-md-5 text-center" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">All Accounts</a>
-                <a class="dropdown-item" href="#">Add Account</a>
-                <a class="dropdown-item" href="#">Evaluation</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/admincon/adminData/view_accounts');?>">All Accounts</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/admincon//adminData/add_account');?>">Add Account</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/admincon/adminData/view_evaluation');?>">Evaluation</a>
               </div>
             </li>
              <div class="dropdown-divider" id="divider"></div>

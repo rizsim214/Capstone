@@ -31,6 +31,11 @@
             ;
           }
 
+          #resources{
+
+            text-decoration: none;
+          }
+
     </style>
   </head>
   <body>

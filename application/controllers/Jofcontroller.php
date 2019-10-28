@@ -8,6 +8,7 @@ class Jofcontroller extends CI_Controller{
 		parent:: __construct();
 
 		$this->load->model('admin/jof_model');
+		$this->load->model('admin/ses_model');
 	}
 
 
@@ -54,6 +55,13 @@ class Jofcontroller extends CI_Controller{
 									$name = $user_data['userName'];
 									$email = $user_data['email_add'];
 									$user_type = $user_data['user_type'];
+									$company_name = $user_data['company_name'];
+									$company_add = $user_data['company_add'];
+									$contactInfo = $user_data['contact_Info'];
+									$cityAdd = $user_data['user_City'];
+									$cityState = $user_data['user_State'];
+									$cityZip = $user_data['user_Zip'];
+
 									$user_logged_in = TRUE;	
 
 
@@ -61,15 +69,21 @@ class Jofcontroller extends CI_Controller{
 										'username' => $name,
 										'email_add' => $email,
 										'user_type' => $user_type,
+										'companyName' => $company_name,
+										'companyAdd' => $company_add,
+										'contactInfo' => $contactInfo,
+										'city_Add' => $cityAdd,
+										'city_State' => $cityState,
+										'city_Zip' => $cityZip,
 										'logged_in' => $user_logged_in
-
 										);	
 
 									
 									
-										
-									$this->session->set_userdata($ses_data);
-
+									$this->session->set_userdata($ses_data);	
+									// $this->session->set_userdata($ses_data);
+									// var_dump($ses_data);
+								
 										if ($user_type === '1') {
 											if ($this->session->userdata()) {
 

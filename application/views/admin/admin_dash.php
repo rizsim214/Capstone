@@ -34,12 +34,15 @@
 				</a>
 			</div>
 	
+	</div>
 </div>
 			<div class="container" id="contains">
 				<table class="table table-hover table-striped text-center ">
 				  <thead class="thead-dark">
 				    <tr>
-				      <th scope="col">Transaction Number</th>
+
+				      <th scope="col">Entry Number</th>
+				      <th scope="col">Company Name</th>
 				      <th scope="col">Consignee</th>
 				      <th scope="col">Broker</th>
 				      <th scope="col">Status</th>
@@ -49,16 +52,18 @@
 				    </tr>
 				  </thead>
 				  <tbody>
-
+				  
 				    <tr>
-				      <th scope="row">1</th>
-				      <td>Mark</td>
+				      <th scope="row">1232</th>
+				      <td>JOF</td>
+				      <td>MIKE</td>
 				      <td>Otto</td>
 				      <td>@mdo</td>
 				      <td>@mdo</td>
 				      <td>@mdo</td>
 				      <td>@mdo</td>
 				    </tr>
+				
 				  </tbody>
 				</table>
 
