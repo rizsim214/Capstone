@@ -8,7 +8,7 @@ class Jofcontroller extends CI_Controller{
 		parent:: __construct();
 
 		$this->load->model('admin/jof_model');
-		$this->load->model('admin/ses_model');
+		
 	}
 
 
