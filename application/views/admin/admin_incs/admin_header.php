@@ -5,60 +5,155 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+   <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" > -->
 
     <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css"> -->
-   <link rel="stylesheet" href="<?php echo base_url();?>assets/css2/styles2.css">
+     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css"> 
+   <link rel="stylesheet" href="<?php echo base_url();?>assets/css2/styles.css">
     <title>Admin Panel</title>
     
+    <style>
+
+          .dropdown {list-style: none; background: #212529;  display: inline-block; }
+          .dropdown .nav-link {color:#F8F8FF; text-decoration: none;}
+          .dropdown .dropdown-menu a{color: black; text-decoration: none;}
+          .dropdown .dropdown-item {background: #F8F8FF; color:#F8F8FF;}
+          .dropdown .dropdown-item:hover {background: #212529; color:#F8F8FF;}
+          .dropdown .dropdown-menu:active {background:#F8F8FF; color:#F8F8FF;}
+          .dropdown .dropdown-menu:focus {background: #212529; color:#F8F8FF;}
+          .dropdown-menu .dropdown-item {display: inline-block; width: 100%; padding: 5px 7px 10px 5px;}
+          .container .dropdown .dropdown-menu a:hover
+          {
+            color: #F8F8FF;
+            background-color: #F8F8FF;
+            ;
+          }
+
+
+          .sidenav {
+            height: 100%;
+            width: 180px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #212529;
+            overflow-x: hidden;
+            padding-top: 10px;
+          }
+
+          .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #F8F8FF;
+            display: block;
+          }
+
+          .sidenav a:hover {
+            color: black;
+          }
+
+          .main {
+            margin-left: 180px; /* Same as the width of the sidenav */
+            font-size: 15px; /* Increased text to enable scrolling */
+            padding: 0px 10px;
+          }
+
+          @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+          }
+
+          #contains{
+
+            padding-top: 20px;
+          }
+
+         #card-pics{
+
+          height:200px;
+          width:285px;
+         }
+
+         #row_hover a{
+          color: #F8F8FF;
+          text-decoration: none;
+         }
+
+
+</style>
   </head>
+
   <body>
+  <nav class="navbar navbar-expand-lg navbar-dark relative" style="background: #212529;">
+        
+            <div class="col-md-11 text-right">
+            <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-user" style="margin-right:5px;"></span>
+                   Admin
+                  </a>
+                  <div class="dropdown-menu col-md-5" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Manage Account</a>
+                    <a class="dropdown-item" href="#">Manange FAQs</a>
+                    <a class="dropdown-item" href="<?php echo site_url('jofcontroller/logout');?>">Logout</a>
+                  </div>
+                </li>
+      </div>
 
+  </nav>
+<div class="sidenav">
+ <a href="<?php echo site_url('jof/admin');?>" class="navbar-brand" style="font-size:22px;">Dashboard</a>
+ 
 
+      <div class="dropdown-divider" id="divider"></div>
+        <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Transactions
+              </a>
+              <div class="dropdown-menu col-md-5 text-center" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Transactions</a>
+                <a class="dropdown-item" href="#">Transaction History</a>
+                <a class="dropdown-item" href="#">Transaction Reports</a>
+              </div>
+            </li>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-  <a class="navbar-brand" href="<?php echo base_url('jof/admin');?>">Dashboard</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+            <div class="dropdown-divider" id="divider"></div>
+        <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Ratings & Feedbacks
+              </a>
+              <div class="dropdown-menu col-md-5 text-center" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#"> Ratings</a>
+                <a class="dropdown-item" href="#"> Feedbacks</a>
+                <a class="dropdown-item" href="#"> Reports</a>
+              </div>
+            </li>
 
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Transactions</a>
-      </li>
+            <div class="dropdown-divider" id="divider"></div>
+        <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Accounting 
+              </a>
+              <div class="dropdown-menu col-md-5 text-center" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Set Payments</a>
+                <a class="dropdown-item" href="#">Unsettled Dues</a>
+                <a class="dropdown-item" href="#">TBD</a>
+              </div>
+            </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="#">Ratings</a>
-      </li>
+        <div class="dropdown-divider" id="divider"></div>
+        <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Employees 
+              </a>
+              <div class="dropdown-menu col-md-5 text-center" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">All Accounts</a>
+                <a class="dropdown-item" href="#">Add Account</a>
+                <a class="dropdown-item" href="#">Evaluation</a>
+              </div>
+            </li>
+             <div class="dropdown-divider" id="divider"></div>
+               
+</div>
 
-       <li class="nav-item">
-        <a class="nav-link" href="#">Feedbacks</a>
-      </li>
-      
-      </ul>
-    
-     <div class="collapse navbar-collapse text-right col-sm-2" id="navbarColor01">
-       <ul class="navbar-nav ">
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarColor01" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <span class="glyphicon glyphicon-user"></span> Admin
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarColor01">
-          <a class="dropdown-item" href="#">Manage Account</a>
-          <a class="dropdown-item" href="#">Employees</a>
-          <a class="dropdown-item" href="#">Change Roles</a>
-          <a class="dropdown-item" href="#">All Unsettled Dues</a>
-          <a class="dropdown-item" href="#">Transaction History</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="<?php echo site_url('jofcontroller/logout');  ?>">Logout</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-    
-  </div>
-</nav>

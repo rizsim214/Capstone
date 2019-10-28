@@ -1,166 +1,66 @@
+<div class="main">
 
 
-<br>
-<br>
-<br>
-<div class="container">
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">transactions</th>
-      <th scope="col"> Entry number </th>
-      <th scope="col">status</th>
-      <th scope="col">billing</th>
+<div class="container " id="contains">
+	<div class="row" id="row_hover">
+			<div class="col-lg-4 col-md-8 mb-5 mb-lg-0 mx-auto">
+				<a href="/templates/" class="card border-0 card-templates shadow-lg bg-primary">
+					<div class="card-body d-flex align-items-end flex-column text-right">
+						<h4>Transaction History</h4>
+							<p class="w-75">look inside to see the company's past transactions</p>
+						<i class="glyphicon glyphicon-pencil"></i>
+					</div>
+				</a>
+			</div>
 
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>test1</td>
-      <td>465712</td>
-      <td><button type="button" class="btn btn-danger " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Update</button>
-				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  			<div class="modal-dialog" role="document">
-								    <div class="modal-content">
-								      <div class="modal-header">
-								        <h4 class="modal-title" id="exampleModalLabel">Update</h4>
-								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								          <span aria-hidden="true">&times;</span>
-								        </button>
-								         </div>
+			<div class="col-lg-4 col-md-8 mb-5 mb-lg-0 mx-auto">
+					<a href="/templates/" class="card border-0 card-templates shadow-lg bg-success">
+						<div class="card-body d-flex align-items-end flex-column text-right">
+							<h4>Feedbacks & Ratings</h4>
+								<p class="w-75">Look inside to see what the clients have to say</p>
+									<i class="glyphicon glyphicon-pencil"></i>
+						</div>
+					</a>
+			</div>
 
-								          <div class="modal-body">
-											        <form>
-											          <div class="form-group">
-											            <label for="recipient-name" class="col-form-label">Full Name</label>
-											            <input type="text" class="form-control" id="full-name">
-											          </div>
-											          <div class="form-group">
-											            <label for="message-text" class="col-form-label">Contact Number</label>
-											            <textarea class="form-control" id="contact-text"></textarea>
-											          </div>
-											          <div class="form-group">
-											            <label for="message-text" class="col-form-label">Email Address</label>
-											            <textarea class="form-control" id="email-text"></textarea>
-											          </div>
-											          <div class="form-group" >
-											            <label for="message-text" class="col-form-label">Message:</label>
-											            <textarea class="form-control" id="message-text" style="padding-bottom: 100px;"></textarea>
-											          </div>
-
-								     		</td>
-      <td><button type="button" class="btn btn-success">view</button></td>
-    </tr>
-    <tr>
-
-
-
-
-      <th scope="row">2</th>
-      <td>test2</td>
-      <td>457882</td>
-      <td><button type="button" class="btn btn-danger " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Update</button>
-				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  			<div class="modal-dialog" role="document">
-								    <div class="modal-content">
-								      <div class="modal-header">
-								        <h4 class="modal-title" id="exampleModalLabel">Update</h4>
-								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								          <span aria-hidden="true">&times;</span>
-								        </button>
-								         </div>
-
-								          <div class="modal-body">
-											        <form>
-											          <div class="form-group">
-											            <label for="recipient-name" class="col-form-label">Full Name</label>
-											            <input type="text" class="form-control" id="full-name">
-											          </div>
-											          <div class="form-group">
-											            <label for="message-text" class="col-form-label">Contact Number</label>
-											            <textarea class="form-control" id="contact-text"></textarea>
-											          </div>
-											          <div class="form-group">
-											            <label for="message-text" class="col-form-label">Email Address</label>
-											            <textarea class="form-control" id="email-text"></textarea>
-											          </div>
-											          <div class="form-group" >
-											            <label for="message-text" class="col-form-label">Message:</label>
-											            <textarea class="form-control" id="message-text" style="padding-bottom: 100px;"></textarea>
-											          </div>
-</td>
-      <td><button type="button" class="btn btn-success">view</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>test2</td>
-      <td>21351</td>
-      <td><button type="button" class="btn btn-danger " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Update</button>
-				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  			<div class="modal-dialog" role="document">
-								    <div class="modal-content">
-								      <div class="modal-header">
-								        <h4 class="modal-title" id="exampleModalLabel">Update</h4>
-								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								          <span aria-hidden="true">&times;</span>
-								        </button>
-								         </div>
-
-								          <div class="modal-body">
-											        <form>
-											          <div class="form-group">
-											            <label for="recipient-name" class="col-form-label">Full Name</label>
-											            <input type="text" class="form-control" id="full-name">
-											          </div>
-											          <div class="form-group">
-											            <label for="message-text" class="col-form-label">Contact Number</label>
-											            <textarea class="form-control" id="contact-text"></textarea>
-											          </div>
-											          <div class="form-group">
-											            <label for="message-text" class="col-form-label">Email Address</label>
-											            <textarea class="form-control" id="email-text"></textarea>
-											          </div>
-											          <div class="form-group" >
-											            <label for="message-text" class="col-form-label">Message:</label>
-											            <textarea class="form-control" id="message-text" style="padding-bottom: 100px;"></textarea>
-											          </div>
-</button></td>
-      <td><button type="button" class="btn btn-success">view</button></td>	
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-<!-- <h4 class="media-heading">Set an Appointnment</h4>
-	<p> Schedule an appointment to have a consultation with us!</p> -->
+				
+			<div class="col-lg-4 col-md-8 mb-5 mb-lg-0 mx-auto">
+				<a href="/templates/" class="card border-0 card-templates shadow-lg bg-info">
+					<div class="card-body d-flex align-items-end flex-column text-right">
+						<h4>Unsettled Dues</h4>
+							<p class="w-75">Look inside to see all the unsettled dues of all clients</p>
+						<i class="glyphicon glyphicon-pencil"></i>
+					</div>
+				</a>
+			</div>
 	
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel">Update</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Full Name</label>
-            <input type="text" class="form-control" id="full-name">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Contact Number</label>
-            <textarea class="form-control" id="contact-text"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Email Address</label>
-            <textarea class="form-control" id="email-text"></textarea>
-          </div>
-          <div class="form-group" >
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text" style="padding-bottom: 100px;"></textarea>
-          </div>
+</div>
+			<div class="container" id="contains">
+				<table class="table table-hover table-striped text-center ">
+				  <thead class="thead-dark">
+				    <tr>
+				      <th scope="col">Transaction Number</th>
+				      <th scope="col">Consignee</th>
+				      <th scope="col">Broker</th>
+				      <th scope="col">Status</th>
+				      <th scope="col">Documents</th>
+				      <th scope="col">Billing</th>
+				      <th scope="col">Registration Date</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Mark</td>
+				      <td>Otto</td>
+				      <td>@mdo</td>
+				      <td>@mdo</td>
+				      <td>@mdo</td>
+				      <td>@mdo</td>
+				    </tr>
+				  </tbody>
+				</table>
+
+			</div>
+</div>

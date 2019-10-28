@@ -62,7 +62,7 @@
       <p class="card-text">Broad Description on what would happen in an appointment, topics to be discussed</p>
     </div>
     <div class="card-footer">
-      <a href="<?php echo base_url('jofcontroller/view/shipping')?>" class="btn btn-danger">Go somewhere</a>
+      <a href="<?php echo base_url('jofcontroller/view/shipping')?>" class="btn btn-secondary">Go somewhere</a>
     </div>
   </div>
   <div class="card text-center">
@@ -72,7 +72,7 @@
       <p class="card-text">Broad Description on what would happen in an appointment, topics to be discussed</p>
     </div>
     <div class="card-footer">
-      <a href="<?php echo base_url('jofcontroller/view/billing')?>" class="btn btn-danger">Go somewhere</a>
+      <a href="<?php echo base_url('jofcontroller/view/billing')?>" class="btn btn-secondary">Go somewhere</a>
     </div>
   </div>
   <div class="card text-center ">
@@ -82,7 +82,7 @@
       <p class="card-text">Broad Description on what would happen in an appointment, topics to be discussed</p>
     </div>
     <div class="card-footer">
-      <a href="<?php echo base_url('jofcontroller/view/tracking')?>" class="btn btn-danger" >Go somewhere</a>
+      <a href="<?php echo base_url('jofcontroller/view/tracking')?>" class="btn btn-secondary" >Go somewhere</a>
     </div>
   </div>
 </div>
@@ -97,7 +97,7 @@
 		<br>
 	<h4 class="media-heading">Set an Appointnment</h4>
 	<p> Schedule an appointment to have a consultation with us!</p>
-	<button type="button" class="btn btn-danger " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Click here</button>
+	<button type="button" class="btn btn-secondary " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Click here</button>
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

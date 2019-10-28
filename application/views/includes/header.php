@@ -7,22 +7,40 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css2/styles2.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css2/styles.css">
     <title>JOF Customs Brokerage</title>
     <style type="text/css">
-        body{
-          font-family: Arial, Helvetica, sans-serif;
-        }
+      #nav{
+
+        background: #212529;
+      }
+
+      
+          .dropdown {list-style: none; background: #212529;  display: inline-block; }
+          .dropdown .nav-link {color:#F8F8FF; text-decoration: none;}
+          .dropdown .dropdown-menu a{color: black; text-decoration: none;}
+          .dropdown .dropdown-item {background: #F8F8FF; color:#F8F8FF;}
+          .dropdown .dropdown-item:hover {background: #212529; color:#F8F8FF;}
+          .dropdown .dropdown-menu:active {background:#F8F8FF; color:#F8F8FF;}
+          .dropdown .dropdown-menu:focus {background: #212529; color:#F8F8FF;}
+          .dropdown-menu .dropdown-item {display: inline-block; width: 100%; padding: 5px 7px 10px 5px;}
+          .container .dropdown .dropdown-menu a:hover
+          {
+            color: #F8F8FF;
+            background-color: #F8F8FF;
+            ;
+          }
+
     </style>
   </head>
   <body>
-  <div class="jumbotron bg-light" style="height:50%;">
+ <!--  <div class="jumbotron bg-light" style="height:50%;">
     <h1 class="display-5 " >JOF CUSTOMS BROKERAGE</h1>
     <p class="lead ">We provide the very best quality service our company has to offer.</p>
     <hr class="my-4">
   </div>
-
-  <nav class="navbar navbar-expand-sm navbar-dark bg-danger sticky-top">
+ -->
+  <nav class="navbar navbar-expand-sm navbar-dark sticky-top" id="nav">
     <a class="navbar-brand" href="<?php echo base_url('jofcontroller/view/home')?>">JOF</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

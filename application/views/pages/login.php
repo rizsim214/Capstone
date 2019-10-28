@@ -44,8 +44,8 @@
               <label><input type="checkbox" value="" checked>Remember me</label>
             </div>
               <div class="text-center" style="height: 50px;">
-              <a href="<?php echo base_url('jofcontroller/view/home')?>" class="btn btn-danger" role="button">Back</a>
-              <button type="submit" class="btn btn-danger" name="signIn" role="button">Login</button>
+              <a href="<?php echo base_url('jofcontroller/view/home')?>" class="btn btn-secondary" role="button">Back</a>
+              <button type="submit" class="btn btn-secondary" name="signIn" role="button">Login</button>
               </div>
  
           </form>

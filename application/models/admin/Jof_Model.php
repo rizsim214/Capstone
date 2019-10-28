@@ -39,4 +39,18 @@ class Jof_Model extends CI_Model{
 			}
 
 	}
+
+	public function getAllTransact(){
+
+		$query = $this->db->query('SELECT * FROM transact_table');
+
+		return $query->result();
+	}
+
+	public function getAllUsers(){
+
+		$query = $this->db->query('SELECT * FROM jof_users');
+
+		return $query->result();
+	}
 }

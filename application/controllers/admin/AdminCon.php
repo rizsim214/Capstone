@@ -17,6 +17,8 @@ class AdminCon extends CI_Controller{
 			redirect('jofcontroller/view/login');
 			
 		}
+
+		$this->load->model('admin/jof_model');
 	}
 
 	 public function index(){
@@ -29,12 +31,15 @@ class AdminCon extends CI_Controller{
 	}
 
 	public function adminData(){
+			$allData['transResult'] = $this->jof_model->getAllTransact();
+			$allData['userResult'] = $this->jof_model->getAllUsers();
 
 			$this->load->view('admin/admin_incs/admin_header');
-			$this->load->view('admin/admin_dash');
+			$this->load->view('admin/admin_dash',$allData);
 			$this->load->view('admin/admin_incs/admin_footer');
 		
 	}
+
 
 
 	
