@@ -39,7 +39,7 @@ class AdminCon extends CI_Controller{
 
 		$user_logged = $this->session->userdata();
 
-		$name['username'] = $user_logged['username'];
+		$name['fName'] = $user_logged['firstName'];
 
 		$this->load->view('admin/admin_incs/admin_header',$name);
 		$this->load->view('admin/'.$admin_page. '.php');

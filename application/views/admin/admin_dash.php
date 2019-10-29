@@ -25,7 +25,7 @@
 
 				
 			<div class="col-lg-4 col-md-8 mb-5 mb-lg-0 mx-auto">
-				<a href="/templates/" class="card border-0 card-templates shadow-lg bg-info">
+				<a href="/templates/" class="card border-0 card-templates shadow-lg bg-danger">
 					<div class="card-body d-flex align-items-end flex-column text-right">
 						<h4>Unsettled Dues</h4>
 							<p class="w-75">Look inside to see all the unsettled dues of all clients</p>
@@ -66,6 +66,23 @@
 				
 				  </tbody>
 				</table>
-
+				
+				<nav aria-label="Page navigation" id="navigate" >
+				  <ul class="pagination justify-content-center">
+				    <li class="page-item">
+				      <a class="page-link" href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				    <li class="page-item"><a class="page-link" href="#">1</a></li>
+				    <li class="page-item"><a class="page-link" href="#">2</a></li>
+				    <li class="page-item"><a class="page-link" href="#">3</a></li>
+				    <li class="page-item">
+				      <a class="page-link" href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+				</nav>
 			</div>
 </div>

@@ -52,6 +52,9 @@ class Jofcontroller extends CI_Controller{
 								if ($result != NULL) {
 
 									$user_data = $result;
+									$fName = $user_data['firstName'];
+									$lName = $user_data['lastName'];
+									$mid_init = $user_data['mid_init'];
 									$name = $user_data['userName'];
 									$email = $user_data['email_add'];
 									$user_type = $user_data['user_type'];
@@ -66,6 +69,9 @@ class Jofcontroller extends CI_Controller{
 
 
 									$ses_data = array(
+										'firstName' => $fName,
+										'lastName' => $lName,
+										'mid_init' => $mid_init,
 										'username' => $name,
 										'email_add' => $email,
 										'user_type' => $user_type,
@@ -83,7 +89,7 @@ class Jofcontroller extends CI_Controller{
 									$this->session->set_userdata($ses_data);	
 									// $this->session->set_userdata($ses_data);
 									// var_dump($ses_data);
-								
+									// die();
 										if ($user_type === '1') {
 											if ($this->session->userdata()) {
 

@@ -18,7 +18,7 @@
           .dropdown .nav-link {color:#F8F8FF; text-decoration: none;}
           .dropdown .dropdown-menu a{color: black; text-decoration: none;}
           .dropdown .dropdown-item {background: #F8F8FF; color:#F8F8FF;}
-          .dropdown .dropdown-item:hover {background: #212529; color:#F8F8FF;}
+          .dropdown .dropdown-item:hover {background: #A9A9A9; color:#F8F8FF;}
           .dropdown .dropdown-menu:active {background:#F8F8FF; color:#F8F8FF;}
           .dropdown .dropdown-menu:focus {background: #212529; color:#F8F8FF;}
           .dropdown-menu .dropdown-item {display: inline-block; width: 100%; padding: 5px 7px 10px 5px;}
@@ -39,7 +39,7 @@
             left: 0;
             background-color: #212529;
             overflow-x: hidden;
-            padding-top: 10px;
+            padding-top: 50px;
           }
 
           .sidenav a {
@@ -51,7 +51,7 @@
           }
 
           .sidenav a:hover {
-            color: black;
+            color: #808080;
           }
 
           .main {
@@ -81,17 +81,48 @@
           text-decoration: none;
          }
 
+         #avatar-pics{
+          width:175px; 
+          height: auto;
+          margin:0px 10px 10px;
+          border:0px;
+          border-radius: 5px;
+          position: relative;
+         
+         }
+         #msg-con{
 
+          border:1px solid black; 
+          margin: 30px 80px 25px ;
+         background-color: #DCDCDC;
+         border-radius: 10px;
+         }
+
+       #rating{
+        font-size: 20px;
+        padding-top: 20px;
+       }
+       #navigate{
+        margin-bottom: 20px;
+       }
+        
+        #msg-con2{
+
+          border:1px solid black; 
+          margin: 30px 80px 25px ;
+         background-color: #FFB6C1;
+         border-radius: 10px;
+         }
 </style>
   </head>
 
   <body>
-  <nav class="navbar navbar-expand-lg navbar-dark relative" style="background: #212529;">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: #212529;">
             
             <div class="col-md-11 text-right">
             <li class="nav-item dropdown">
                   <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-user" style="margin-right:5px;"></span>
-                   Welcome <?php echo $username;  ?>
+                   Welcome <?php echo $fName;  ?>
                   </a>
                   <div class="dropdown-menu col-md-5" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="<?php echo site_url('admin/admincon/adminData/add_account');?>">Manage Account</a>
@@ -103,7 +134,7 @@
 
   </nav>
 <div class="sidenav">
- <a href="<?php echo site_url('jof/admin');?>" class="navbar-brand" style="font-size:22px;">Dashboard</a>
+ <a href="<?php echo site_url('jof/admin');?>" class="navbar-brand relative" style="font-size:22px;">Dashboard</a>
  
 
       <div class="dropdown-divider" id="divider"></div>
